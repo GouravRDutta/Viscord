@@ -1,5 +1,5 @@
 const express= require('express');
-var fs = require('fs')
+let fs = require('fs')
 const app=express()
 const https = require('https')
 const port=process.env.PORT || 3000
