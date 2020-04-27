@@ -1,16 +1,8 @@
 const express= require('express');
-let fs = require('fs')
 const app=express()
-const https = require('https')
+const http =require('http').Server(app)
+const io=require('socket.io')(http)
 const port=process.env.PORT || 3000
-const secureServer = https.createServer({
-    key: fs.readFileSync('./Keys/server.key'),
-    cert: fs.readFileSync('./Keys/server.cert')
-    }, app).listen(port,() => console.log("Active on "+port+" port"))
-
-const io=require('socket.io')(secureServer)
-
-
 app.use(express.static(__dirname+"/public"))
 
 let clients = 0
@@ -51,7 +43,4 @@ function SendAnswer(data)
 {
     this.broadcast.emit("BackAnswer",data)
 }
-
-
-
-
+http.listen(port,() => console.log("Active on "+port+" port"))
