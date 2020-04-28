@@ -30,7 +30,7 @@ io.on("connection", function(socket){
 function Disconnect(){
     if (clients > 0){
         if (clients <= 2)
-            this.broadcast.emit("Disconnect")
+            this.broadcast.emit("removepeer")
         clients--
     }
 }
