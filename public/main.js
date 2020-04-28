@@ -68,7 +68,12 @@
       video.play()
       
    }
-
+   function RemovePeer() {
+    document.getElementById("peerVideo").remove();
+    if (client.peer) {
+        client.peer.destroy()
+    }
+  }
    function SessionActive(){
      document.write("Session Active ... Come Back Later")
    }
@@ -77,6 +82,7 @@
   socket.on('BackAnswer',signalAnswer)
   socket.on('CreatePeer',MakePeer)
   socket.on('SessionActive',SessionActive)
-
+  socket.on('removepeer',RemovePeer)
+ 
 }).catch(err=> document.write(err))
 
