@@ -1,32 +1,26 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>VisCord</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
-
-	<link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="prac.css">
+    <link rel="shortcut icon" href="#">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
 </head>
-
-<body>
-     
-		 <div class="container-fluid">
-		 	<div class="row h-90 w-100">
-		 		<div class="col-xs-3 col-md-5 d-flex justify-content-center">
-                   		 <div class="embed-responsive embed-responsive-16by9">
-           	              		<video  class="embed-responsive-item" muted></video>	 
-           			</div>
-				</div>
-				 <div class="col-xs-9 col-md-7 d-flex justify-content-center">
-					 <div id="peerDiv" class="embed-responsive embed-responsive-16by9">
-						
-					 </div>
-				 </div>
-		 	</div>
-		 </div>
-		 <script src="/socket.io/socket.io.js"></script>
+<body>     
+    <div class="c1">
+        <div class="main-box" id="peerDiv" class="embed-responsive">
+            <!-- <h1>HI everyone</h1> -->
+             <!-- <video src="V1.mp4" muted></video> -->
+        <div class="myvid embed-responsive embed-responsive-1by1">
+            <!-- <h1>HI</h1> -->
+            <video  class="embed-responsive-item" muted></video>
+        </div>
+        </div>
+    </div>
+<script src="/socket.io/socket.io.js"></script>
 <script src="bundle.js"></script>
 
 </body>
