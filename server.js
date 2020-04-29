@@ -23,6 +23,7 @@ io.on("connection", function(socket){
     })
     socket.on('Offer',SendOffer)
     socket.on('Answer',SendAnswer)
+    socket.on('disconnect',Disconnect)
     socket.on('disconnectfrmbtn',Disconnect)
     socket.on('datafrmclient',function(data){
         this.broadcast.emit('datafrmserver',data)
