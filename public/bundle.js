@@ -23,6 +23,7 @@
       })
         peer.on('close',function(){
           document.getElementById("peerVideo").remove();
+	  document.getElementById("peerButton").remove();
           peer.destroy()
         })
          return peer
@@ -73,7 +74,26 @@
       video.class='embed-responsive-item'
       document.querySelector('#peerDiv').appendChild(video)
       video.play()
+	   
+      let button=document.createElement('button')
+      button.innerHTML="Disconnect"
+      button.setAttribute('class','btn btn-info')
+      button.id="peerButton"
+      button.onclick=function() { 
+         console.log("disconnected")
+      //  RemovePeer()
+       socket.emit('disconnectfrmbtn')
+       window.close()
    }
+    document.getElementById('peerDiv').appendChild(button)
+   }
+   document.getElementById('send').addEventListener('click',function()
+   {
+     let yourMessage=document.getElementById('yourMessage').value
+     socket.emit('datafrmclient',yourMessage)
+     document.getElementById('yourMessage').value="";
+   })
+	  
    function RemovePeer() {
     document.getElementById("peerVideo").remove();
     if (client.peer) {
@@ -89,6 +109,11 @@
   socket.on('CreatePeer',MakePeer)
   socket.on('SessionActive',SessionActive)
   socket.on('removepeer',RemovePeer)
+  socket.on('datafrmserver',function(data){
+    alert(data)
+    document.getElementById('messages').textContent +=data+'\n'  
+  })
+	  
 }).catch(err=> document.write(err))
 
 },{"simple-peer":13}],2:[function(require,module,exports){
