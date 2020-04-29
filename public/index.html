@@ -7,16 +7,25 @@
     <title>VisCord</title>
     <link rel="stylesheet" href="prac.css">
     <link rel="shortcut icon" href="#">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap" rel="stylesheet">
 </head>
 <body>     
     <div class="c1">
         <div class="main-box" id="peerDiv" class="embed-responsive">
             <!-- <h1>HI everyone</h1> -->
              <!-- <video src="V1.mp4" muted></video> -->
-        <div class="myvid embed-responsive embed-responsive-1by1">
+        <div class="myvid">
             <!-- <h1>HI</h1> -->
-            <video  class="embed-responsive-item" muted></video>
+            <video  muted></video>
+        </div>
+            <br>
+        <div class='message'>
+            <label> Enter Message </label><br>
+            <textarea id="yourMessage" cols="30" rows="2"></textarea>
+            <button id="send" class="btn btn-secondary">SEND</button>
+            <pre id='messages'></pre>
+
         </div>
         </div>
     </div>
