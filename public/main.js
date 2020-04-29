@@ -9,7 +9,7 @@
   }).then(stream =>
   {
     
-     console.log(1)
+     
      socket.emit('NewClient')
      video.srcObject=stream
      video.play()
@@ -67,9 +67,30 @@
       document.querySelector('#peerDiv').appendChild(video)
       video.play()
       
+     let button=document.createElement('button')
+      button.innerHTML="Disconnect"
+      button.setAttribute('class','btn btn-info')
+      button.id="peerButton"
+      button.onclick=function() { 
+        console.log("disconnected")
+        socket.emit('disconnectfrmbtn')
+        window.close()
    }
+     document.getElementById('peerDiv').appendChild(button)
+      
+   }
+   
+  document.getElementById('send').addEventListener('click',function()
+{
+  let yourMessage=document.getElementById('yourMessage').value
+  socket.emit('datafrmclient',yourMessage)
+  document.getElementById('yourMessage').value="";
+}
+  )
+    
    function RemovePeer() {
     document.getElementById("peerVideo").remove();
+    document.getElementById("peerButton").remove();
     if (client.peer) {
         client.peer.destroy()
     }
@@ -83,6 +104,10 @@
   socket.on('CreatePeer',MakePeer)
   socket.on('SessionActive',SessionActive)
   socket.on('removepeer',RemovePeer)
+  socket.on('datafrmserver',function(data){
+    alert(data)
+    document.getElementById('messages').textContent +=data+'\n'  
+  })
  
 }).catch(err=> document.write(err))
 
