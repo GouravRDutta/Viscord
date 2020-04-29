@@ -4,7 +4,10 @@
     margin:auto;
     position:relative;
 }
-
+#messages{
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: large;
+}
 .main-box{
     border:1px solid #000;
     border-radius: 5px;
@@ -19,6 +22,15 @@
     top:-50px;
     margin-top: 10px;
 }
+#peerButton{
+    position: relative;
+    top:400px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+#peerButton:hover{
+    background-color: red;
+}
 .myvid{
     position: relative;
     top:-125px;
@@ -29,6 +41,16 @@
     /* border: 2px solid red; */
 }
 
+@media all and (max-width:500px){
+    .main-box video{
+        position: absolute;
+        width:100%;
+        height:600px;
+        top:-50px;
+        margin-top: 10px;
+    }
+}
+
 .myvid video{
     height:110px;
     position: relative;
@@ -36,5 +58,70 @@
     /* border:2px solid red; */
 
 }
+@media all and (min-width:680px){
+.message{
+    height:110px; 
+    position: relative;
+    top:570px;
+    margin: 5px;
+    margin-left: 200px;
+    
+}
+#send{
+    position: absolute;
+    margin:10px;
+    height:40px;
+    top: 30px;
+    
+}
+#yourMessage{
+    border-radius: 5px;
+    border:2px solid lightgrey;
+}
+}
+@media all and (max-width:605px){
+    .message{
+        height:110px; 
+        position: relative;
+        top:570px;
+        margin: 5px;
+        margin-left: 20px;
+        
+    }
+    #send{
+        position: absolute;
+        margin-bottom: 10px;
+        height:40px;
+        /* top:-50px; */
+        margin-left:10px;
+        top:40px;
+    }
+    #yourMessage{
+        border-radius: 5px;
+        border:2px solid lightgrey;
+    }
+}
+@media all and (min-width:1335px){
+    .message{
+        height:110px; 
+        position: relative;
+        top:275px;
+        margin: 5px;
+        margin-left: 20px;
+        
+    }
+    #send{
+        position: relative;
+        margin-bottom: 10px;
+        height:40px;
+        top: 35px;
+        left:-160px;
+        
+    }
+    #yourMessage{
+        border-radius: 5px;
+        border:2px solid lightgrey;
+    }
+    }
 
 
