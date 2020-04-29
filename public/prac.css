@@ -85,7 +85,7 @@
         position: relative;
         top:570px;
         margin: 5px;
-        margin-left: 20px;
+        margin-left: 5px;
         
     }
     #send{
@@ -93,7 +93,7 @@
         margin-bottom: 10px;
         height:40px;
         /* top:-50px; */
-        margin-left:10px;
+        margin-left:5px;
         top:40px;
     }
     #yourMessage{
